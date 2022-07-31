@@ -115,7 +115,7 @@ function initialise_auth_controller() {
         },
         async verify_token(req, res) {
             const { token } = req.body
-            const verify = await jwt.verify(token, process.env.privatekey)
+            const verify = await jwt.verify(token, "dirty_cb_manager")
             const data = {
                 username: verify.username,
                 userid: verify.user_id,
