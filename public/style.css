@@ -1,0 +1,2917 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Noto+Sans&family=Roboto:wght@100&family=Ubuntu:wght@300;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background-color: rgba(var(--b3f,250,250,250),1); */
+    background-color: rgb(16, 16, 16);
+    overflow-x: hidden;
+}
+
+.bodycontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.companyCode {
+    font-size: x-small;
+}
+
+.navbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.452) !important;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    font-family: 'Ubuntu';
+    color: white;
+    border-bottom: 2px solid rgb(62, 116, 216);
+}
+
+.navcont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.navcont>div {
+    margin: 10px;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navlinks a {
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    border: 2px solid #2865d8;
+    padding: 5px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.avlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.avlinks a {
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    border: 2px solid #2865d8;
+    padding: 5px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.maincont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    font-family: 'Ubuntu';
+    font-size: medium;
+    color: white;
+}
+
+.filebox {
+    position: relative;
+    top: 150px;
+    width: 98vw;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.filetask {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    top: 0;
+}
+
+.createnew {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.availbox {
+    position: relative;
+    top: 2px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100%;
+    overflow-y: scroll;
+    height: 75vh;
+}
+
+.folder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+}
+
+.filename {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filenamereal {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filenamereal:hover {
+    overflow: visible;
+}
+
+.cbBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 50px;
+}
+
+.cbBoxData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.cbBoxData>div {
+    margin: 10px;
+}
+
+.md-48 {
+    font-size: 72px !important;
+    color: rgb(192, 192, 136);
+}
+
+.ManBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.videopagecont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    width: 100%;
+}
+
+.videoPlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vmax;
+}
+
+.videoPlayer>div {
+    margin: 6px;
+}
+
+.videotitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    /* text-align: center; */
+}
+
+.videopagecont>div {
+    margin: 10px;
+}
+
+.miscellthings {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 50vw;
+}
+
+.suggested {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.suggested>div {
+    margin: 8px;
+}
+
+.somebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.somebox>img,
+p {
+    margin: 5px;
+}
+
+.mainopt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainopt>button {
+    margin: 5px;
+}
+
+.mainopt button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    padding: 8px;
+    background-color: rgb(14, 127, 202);
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    color: #000;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.uploadBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.uploadbtn {
+    opacity: 0;
+    z-index: 1;
+}
+
+.uploadText {
+    background-color: #04AA6D;
+    position: absolute;
+    padding: 5px 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px black;
+}
+
+.uploadbtn:active .uploadText {
+    box-shadow: 1px 1px 0px black;
+}
+
+.audbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3e4c4c;
+    width: 85vw;
+    height: 450px;
+    border: 2px solid black;
+    /* border-radius: 10px; */
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.575);
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    margin-top: 95px;
+    background: linear-gradient(to right, rgb(0, 0, 0), transparent, rgba(0, 0, 0, 0.486), black);
+}
+
+.audbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: url('https://sklktecdnems01.cdnsrv.jio.com/c.saavncdn.com/567/Pagglait-Hindi-2021-20210316094624-500x500.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: 100% 100%; */
+    filter: blur(1px);
+}
+
+.audcdbox .fa-compact-disc {
+    background-color: #08e1ae;
+    background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
+    /* animation: rotatecd 3s ease-in-out infinite; */
+    border-radius: 20%;
+}
+
+@keyframes rotatecd {
+    0% {
+        transform: rotate(360deg);
+        color: rgb(8, 36, 99);
+        background-image: linear-gradient(315deg, #fdb813 0%, #788cb6 74%);
+    }
+    25% {
+        background-color: #fdb813;
+        border-radius: 50%;
+    }
+    35% {
+        border-radius: 25%;
+    }
+    45% {
+        border-radius: 30%;
+    }
+    50% {
+        border-radius: 50%;
+    }
+    60% {
+        border-radius: 40%;
+    }
+    70% {
+        border-radius: 25%;
+    }
+    80% {
+        border-radius: 50%;
+    }
+    90% {
+        border-radius: 90%;
+    }
+    100% {
+        border-radius: 15%;
+    }
+}
+
+.audboxmain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.md-240 {
+    font-size: 240px;
+    color: rgb(0, 0, 0);
+}
+
+.audiomain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.audiomain>div {
+    margin: 67px;
+}
+
+.titleaud {
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-top: 20px;
+}
+
+.progress>span {
+    margin: 10px;
+}
+
+.progressaud {
+    width: 100%;
+}
+
+.lyricsaud {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25vw;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgb(26, 25, 25);
+    border-radius: -40px;
+    color: aliceblue;
+    font-family: monospace;
+    z-index: 1;
+    text-align: center;
+    animation: lyricsboxani 1s ease-out forwards;
+    z-index: 100000;
+}
+
+@keyframes lyricsboxani {
+    0% {
+        transform: translateX(200px);
+    }
+}
+
+.lyrics {
+    margin-top: 50px;
+}
+
+.md-10 {
+    font-size: large;
+    margin: 5px;
+}
+
+.md-10:hover {
+    color: red !important;
+}
+
+.hidden {
+    display: none;
+    animation: lyricsboxanin 1s ease-out forwards;
+}
+
+@keyframes lyricsboxanin {
+    0% {
+        transform: translate(500px);
+    }
+}
+
+.audctrl {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 240px;
+}
+
+.audctrl>span {
+    margin: 20px;
+}
+
+.playpause {
+    position: relative;
+}
+
+.playpause span {
+    position: absolute;
+    top: -12px;
+}
+
+.playbtn {
+    display: none;
+}
+
+.audioplyr {
+    --plyr-color-main: rgb(65, 162, 207);
+}
+
+.plyr {
+    width: 100% !important;
+}
+
+.plyr--audio .plyr__controls {
+    background-color: #000 !important;
+    border: 2px solid rgb(153, 149, 149) !important;
+    border-radius: 8px !important;
+}
+
+.musicbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: 5px;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.459);
+    /* background-clip: padding-box;  */
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    /* backdrop-filter: blur(2px); */
+    margin: 20px;
+}
+
+.musicbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: linear-gradient(to right, rgb(0, 119, 255), orange);
+}
+
+.musicbox>div {
+    margin: 10px;
+}
+
+.audioitem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.295);
+}
+
+.audioicon {
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.audioitem:hover .audioicon span {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.audioitem:hover .audioicon img {
+    filter: blur(1px);
+}
+
+.audioicon span {
+    display: none;
+}
+
+.audioicon img {
+    border-radius: 10px;
+}
+
+.audname {
+    margin: 5px;
+}
+
+.audduration {
+    font-family: monospace;
+}
+
+.audiofile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&Montserrat:wght@200&Roboto:wght@100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background-color: rgba(var(--b3f,250,250,250),1); */
+    background-color: rgb(17, 17, 17);
+    overflow-x: hidden;
+}
+
+.bodycontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.companyCode {
+    font-size: x-small;
+}
+
+.navbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(103, 194, 255);
+    z-index: 1;
+    font-family: 'Ubuntu';
+}
+
+.navcont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.navcont>div {
+    margin: 10px;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navlinks a {
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.maincont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    font-family: 'Ubuntu';
+    font-size: medium;
+    color: white;
+}
+
+.filebox {
+    position: relative;
+    top: 150px;
+    width: 98vw;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.filetask {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    top: 0;
+}
+
+.createnew {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.availbox {
+    position: relative;
+    top: 2px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100%;
+    overflow-y: scroll;
+    height: 75vh;
+}
+
+.folder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+}
+
+.filename {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filenamereal {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filenamereal:hover {
+    overflow: visible;
+}
+
+.cbBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 50px;
+}
+
+.cbBoxData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.cbBoxData>div {
+    margin: 10px;
+}
+
+.md-48 {
+    font-size: 72px !important;
+    color: rgb(192, 192, 136);
+}
+
+.ManBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.videopagecont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    width: 100%;
+}
+
+.videoPlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vmax;
+}
+
+.videoPlayer>div {
+    margin: 6px;
+}
+
+.videotitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    /* text-align: center; */
+}
+
+.videopagecont>div {
+    margin: 10px;
+}
+
+.miscellthings {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 50vw;
+}
+
+.suggested {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.suggested>div {
+    margin: 8px;
+}
+
+.somebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.somebox>img,
+p {
+    margin: 5px;
+}
+
+.mainopt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainopt>button {
+    margin: 5px;
+}
+
+.mainopt button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    padding: 8px;
+    background-color: rgb(14, 127, 202);
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    color: #000;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.uploadBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.uploadbtn {
+    opacity: 0;
+    z-index: 1;
+}
+
+.uploadText {
+    background-color: #04AA6D;
+    position: absolute;
+    padding: 5px 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px black;
+}
+
+.uploadbtn:active .uploadText {
+    box-shadow: 1px 1px 0px black;
+}
+
+.audbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3e4c4c;
+    width: 85vw;
+    height: 450px;
+    border: 2px solid black;
+    /* border-radius: 10px; */
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.575);
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    background: linear-gradient(to right, rgb(0, 0, 0), transparent, rgba(0, 0, 0, 0.486), black);
+}
+
+.audbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: url('https://sklktecdnems01.cdnsrv.jio.com/c.saavncdn.com/567/Pagglait-Hindi-2021-20210316094624-500x500.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: 100% 100%; */
+    filter: blur(1px);
+}
+
+.audcdbox .fa-compact-disc {
+    background-color: #08e1ae;
+    background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
+    /* animation: rotatecd 3s ease-in-out infinite; */
+    border-radius: 20%;
+}
+
+@keyframes rotatecd {
+    0% {
+        transform: rotate(360deg);
+        color: rgb(8, 36, 99);
+        background-image: linear-gradient(315deg, #fdb813 0%, #788cb6 74%);
+    }
+    25% {
+        background-color: #fdb813;
+        border-radius: 50%;
+    }
+    35% {
+        border-radius: 25%;
+    }
+    45% {
+        border-radius: 30%;
+    }
+    50% {
+        border-radius: 50%;
+    }
+    60% {
+        border-radius: 40%;
+    }
+    70% {
+        border-radius: 25%;
+    }
+    80% {
+        border-radius: 50%;
+    }
+    90% {
+        border-radius: 90%;
+    }
+    100% {
+        border-radius: 15%;
+    }
+}
+
+.audboxmain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.md-240 {
+    font-size: 240px;
+    color: rgb(0, 0, 0);
+}
+
+.audiomain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.audiomain>div {
+    margin: 67px;
+}
+
+.titleaud {
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-top: 20px;
+}
+
+.progress>span {
+    margin: 10px;
+}
+
+.progressaud {
+    width: 100%;
+}
+
+.lyricsaud {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25vw;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgb(26, 25, 25);
+    border-radius: -40px;
+    color: aliceblue;
+    font-family: monospace;
+    z-index: 1;
+    text-align: center;
+    animation: lyricsboxani 1s ease-out forwards;
+}
+
+@keyframes lyricsboxani {
+    0% {
+        transform: translateX(200px);
+    }
+}
+
+.lyrics {
+    margin-top: 50px;
+}
+
+.md-10 {
+    font-size: large;
+    margin: 5px;
+}
+
+.md-10:hover {
+    color: red !important;
+}
+
+.hidden {
+    display: none;
+    animation: lyricsboxanin 1s ease-out forwards;
+}
+
+@keyframes lyricsboxanin {
+    0% {
+        transform: translate(500px);
+    }
+}
+
+.audctrl {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 240px;
+}
+
+.audctrl>span {
+    margin: 20px;
+}
+
+.playpause {
+    position: relative;
+}
+
+.playpause span {
+    position: absolute;
+    top: -12px;
+}
+
+.playbtn {
+    display: none;
+}
+
+.audioplyr {
+    --plyr-color-main: rgb(65, 162, 207);
+}
+
+.plyr {
+    width: 100% !important;
+}
+
+.plyr--audio .plyr__controls {
+    background-color: #000 !important;
+    border: 2px solid rgb(153, 149, 149) !important;
+    border-radius: 8px !important;
+}
+
+.musicbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: 5px;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.459);
+    /* background-clip: padding-box;  */
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    /* backdrop-filter: blur(2px); */
+    margin: 20px;
+}
+
+.musicbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: linear-gradient(to right, rgb(0, 119, 255), orange);
+}
+
+.musicbox>div {
+    margin: 10px;
+}
+
+.audioitem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.295);
+}
+
+.audioicon {
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.audioitem:hover .audioicon span {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.audioitem:hover .audioicon img {
+    filter: blur(1px);
+}
+
+.audioicon span {
+    display: none;
+}
+
+.audioicon img {
+    border-radius: 10px;
+}
+
+.audname {
+    margin: 5px;
+}
+
+.audduration {
+    font-family: monospace;
+}
+
+.audiofile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&Montserrat:wght@200&Roboto:wght@100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background-color: rgba(var(--b3f,250,250,250),1); */
+    background-color: rgb(17, 17, 17);
+    overflow-x: hidden;
+}
+
+.bodycontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.companyCode {
+    font-size: x-small;
+}
+
+.navbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(103, 194, 255);
+    z-index: 1;
+    font-family: 'Ubuntu';
+}
+
+.navcont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.navcont>div {
+    margin: 10px;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.avlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.avlinks a {
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.maincont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    font-family: 'Ubuntu';
+    font-size: medium;
+    color: white;
+}
+
+.fa-bars {
+    position: relative;
+    left: 10px;
+}
+
+
+/* responsive navbar */
+
+.iconham {
+    cursor: pointer;
+    margin: 10px;
+    display: contents;
+}
+
+
+/* @media screen and (max-width:850px) {
+    .navlinks a:not(:first-child){
+        display: none;
+    }
+    .iconham{
+        display: contents;
+    }
+    .navlinks.responsive{
+        flex-direction: column;
+        justify-content: unset;
+        position: absolute;
+        top: 65px;
+        left: -7px;
+        height: 100vh;
+        width: 250px;
+        background: rgba(0, 0, 0, 0.39);
+    }
+    
+} */
+
+.fa-bars {
+    margin: 5px;
+    font-size: 20px;
+}
+
+
+/* cbfilemanager */
+
+.filebox {
+    position: relative;
+    top: 150px;
+    width: 98vw;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.filetask {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    top: 0;
+}
+
+.createnew {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.availbox {
+    position: relative;
+    top: 2px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100%;
+    overflow-y: scroll;
+    height: 75vh;
+}
+
+.folder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+}
+
+.filename {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filenamereal {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filenamereal:hover {
+    overflow: visible;
+}
+
+.cbBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 50px;
+}
+
+.cbBoxData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.cbBoxData>div {
+    margin: 10px;
+}
+
+.md-48 {
+    font-size: 72px !important;
+    color: rgb(192, 192, 136);
+}
+
+.ManBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.videopagecont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    width: 100%;
+}
+
+.videoPlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vmax;
+}
+
+.videoPlayer>div {
+    margin: 6px;
+}
+
+.videotitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    /* text-align: center; */
+}
+
+.videopagecont>div {
+    margin: 10px;
+}
+
+.miscellthings {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 50vw;
+}
+
+.suggested {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.suggested>div {
+    margin: 8px;
+}
+
+.somebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.somebox>img,
+p {
+    margin: 5px;
+}
+
+.mainopt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainopt>button {
+    margin: 5px;
+}
+
+.mainopt button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    padding: 8px;
+    background-color: rgb(14, 127, 202);
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    color: #000;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.uploadBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.uploadbtn {
+    opacity: 0;
+    z-index: 1;
+}
+
+.uploadText {
+    background-color: #04AA6D;
+    position: absolute;
+    padding: 5px 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px black;
+}
+
+.uploadbtn:active .uploadText {
+    box-shadow: 1px 1px 0px black;
+}
+
+.audbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3e4c4c;
+    width: 85vw;
+    height: 450px;
+    border: 2px solid black;
+    /* border-radius: 10px; */
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.575);
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    background: linear-gradient(to right, rgb(0, 0, 0), transparent, rgba(0, 0, 0, 0.486), black);
+}
+
+.audbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background-image: var(--image);
+    /* background: url('https://sklktecdnems01.cdnsrv.jio.com/c.saavncdn.com/567/Pagglait-Hindi-2021-20210316094624-500x500.jpg'); */
+    background-repeat: no-repeat;
+    background-position: right;
+    /* background-size: 100% 100%; */
+    filter: blur(1px);
+}
+
+.audcdbox .fa-compact-disc {
+    background-color: #08e1ae;
+    background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
+    /* animation: rotatecd 3s ease-in-out infinite; */
+    border-radius: 20%;
+}
+
+.localfilebtn {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 12px;
+    left: 100px;
+}
+
+.localfilebtn button {
+    position: relative;
+    background: #167bff;
+    color: #000;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    font-family: 'ubuntu', sans-serif;
+    font-size: medium;
+}
+
+@keyframes rotatecd {
+    0% {
+        transform: rotate(360deg);
+        color: rgb(0, 0, 0);
+        background-image: linear-gradient(315deg, #fdb813 0%, #56cf70 74%);
+    }
+    25% {
+        background-color: #fdb813;
+        border-radius: 50%;
+    }
+    35% {
+        border-radius: 25%;
+    }
+    45% {
+        border-radius: 30%;
+    }
+    50% {
+        border-radius: 50%;
+    }
+    60% {
+        border-radius: 40%;
+    }
+    70% {
+        border-radius: 25%;
+    }
+    80% {
+        border-radius: 50%;
+    }
+    90% {
+        border-radius: 90%;
+    }
+    100% {
+        border-radius: 15%;
+    }
+}
+
+.audboxmain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.md-240 {
+    font-size: 240px;
+    color: rgb(0, 0, 0);
+}
+
+.audiomain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.audiomain>div {
+    margin: 67px;
+}
+
+.titleaud {
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-top: 20px;
+}
+
+.progress>span {
+    margin: 10px;
+}
+
+.progressaud {
+    width: 100%;
+}
+
+.lyricsaud {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 383px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.432);
+    backdrop-filter: blur(1px);
+    color: aliceblue;
+    font-family: monospace;
+    z-index: 1;
+    text-align: center;
+    animation: lyricsboxani 1s ease-out forwards;
+    z-index: 10000;
+}
+
+.headlyrics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 15px;
+    left: 153px;
+}
+
+#lyrics_txt {
+    font-family: cursive;
+    font-size: 18px;
+}
+
+@keyframes lyricsboxani {
+    0% {
+        transform: translateX(200px);
+    }
+}
+
+.lyrics {
+    margin-top: 50px;
+}
+
+.md-10 {
+    font-size: large;
+    margin: 5px;
+}
+
+.md-10:hover {
+    color: red !important;
+}
+
+.hidden {
+    display: none;
+    animation: lyricsboxanin 1s ease-out forwards;
+}
+
+@keyframes lyricsboxanin {
+    0% {
+        transform: translate(500px);
+    }
+}
+
+.audctrl {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 240px;
+}
+
+.audctrl>span {
+    margin: 20px;
+}
+
+.playpause {
+    position: relative;
+}
+
+.playpause span {
+    position: absolute;
+    top: -12px;
+}
+
+.playbtn {
+    display: none;
+}
+
+.audioplyr {
+    --plyr-color-main: rgb(65, 162, 207);
+}
+
+.plyr {
+    width: 100% !important;
+}
+
+.plyr--audio .plyr__controls {
+    background-color: #000 !important;
+    border: 2px solid rgb(153, 149, 149) !important;
+    border-radius: 8px !important;
+}
+
+.musicbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: 5px;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.459);
+    /* background-clip: padding-box;  */
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    /* backdrop-filter: blur(2px); */
+    margin: 20px;
+}
+
+.musicbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: linear-gradient(to right, rgb(0, 119, 255), orange);
+}
+
+.musicbox>div {
+    margin: 10px;
+}
+
+.audioitem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.295);
+}
+
+.audioicon {
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.audioitem:hover .audioicon span {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.audioitem:hover .audioicon img {
+    filter: blur(1px);
+}
+
+.audioicon span {
+    display: none;
+}
+
+.audioicon img {
+    border-radius: 10px;
+}
+
+.audname {
+    margin: 5px;
+}
+
+.audduration {
+    font-family: monospace;
+}
+
+.audiofile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.audioopt {
+    display: none;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    width: 250px;
+    height: 100vh;
+    z-index: 110;
+    animation: slideHome 1s ease forwards;
+}
+
+
+/* .closeHomeani{
+    animation: closeSlideHome 1s ease backwards;
+} */
+
+@keyframes slideHome {
+    0% {
+        transform: translateX(-200px);
+    }
+}
+
+.audcodetitle {
+    margin: 10px;
+}
+
+.homelaycode {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -50px;
+}
+
+.miscboxaudio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px 8px;
+}
+
+.miscboxaudio>div {
+    /* background-color: #226bca; */
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+}
+
+.miscauditem {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    border-bottom: 2px solid rgb(133, 133, 133);
+    padding: 5px;
+}
+
+.songid {
+    display: none;
+}
+
+.searchbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 5px;
+    margin: 9px;
+    border: 2px solid rgb(31, 75, 194);
+    border-radius: 5px;
+    background: rgb(0, 0, 0);
+    /* border-bottom: 2px solid rgb(255, 255, 255); */
+    position: fixed;
+    top: 80px;
+    right: 0;
+    z-index: 11;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.searchbox input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+
+.searchbox input:focus {
+    box-shadow: 2px 2px 10px rgb(16, 78, 148);
+}
+
+.searchbox button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    border: 2px solid black;
+    /* border-radius: 5px; */
+    height: 35px;
+    /* font-family: 'Ubuntu', sans-serif;
+     */
+    font-family: 'Ubuntu';
+    font-size: larger;
+    width: auto;
+    background-color: rgb(16, 78, 148);
+}
+
+.stickybottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.moreoptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.moreoptions div p span {
+    font-size: 30px;
+}
+
+.watchlist {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    background-color: rgba(0, 0, 0, 0.651);
+    backdrop-filter: blur(5px);
+    width: 500px;
+    height: 250px;
+    padding: 8px;
+    border-radius: 8px;
+    /* overflow-y: scroll; */
+    overflow: hidden;
+    z-index: 110;
+}
+
+.createplaylist {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.createplaylist button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgb(24, 120, 245);
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Ubuntu';
+}
+
+.createplaylist input {
+    width: 100%;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 2px solid white;
+    border-radius: 5px;
+}
+
+.playlistcheckbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.playlistcheckbox>div {
+    padding: 8px;
+}
+
+.saveplaylist {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveplaylist button {
+    padding: 8px;
+    background: rgb(24, 120, 245);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+.favourites {
+    position: relative;
+}
+
+.unfav {
+    position: absolute;
+    top: 0;
+    display: contents;
+}
+
+.addtoplaylist {
+    position: relative;
+}
+
+.saveplaylist {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right;
+}
+
+.saveplaylist>button {
+    margin: 5px;
+}
+
+.accountmodal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 100;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    color: rgb(0, 0, 0);
+}
+
+
+/* Modal Content/Box */
+
+.accountmodal-content {
+    background-color: #242424;
+    margin: 5% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+
+.accountab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.taboption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    /* background-color: #ddd; */
+    /* background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); */
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: larger;
+}
+
+.taboption>div {
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    margin: 10px;
+}
+
+.accountbutton {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.accounttabbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #242424;
+    color: #cecece;
+}
+
+
+/* The Close Button */
+
+.accountclose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.accountclose:hover,
+.accountclose:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.signupform>div {
+    margin: 10px;
+}
+
+.signupform div {
+    text-align: left;
+    width: 90%;
+}
+
+.signupform div input {
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+.signupform div input:focus {
+    box-shadow: 4px 4px 15px rgb(2, 181, 252);
+}
+
+.signupform div>input,
+label {
+    margin: 10px;
+}
+
+.submitButton {
+    padding: 10px;
+    width: 50% !important;
+}
+
+.submitButton input {
+    background: black;
+    border: none;
+    /* box-shadow: 2px 2px 4px rgb(75, 191, 236); */
+    font-size: large;
+}
+
+.submitButton input:active {
+    box-shadow: 4px 4px 15px rgb(2, 181, 252);
+}
+
+.showpassbtn {
+    position: relative;
+    padding: 5px;
+    background-color: #167bff;
+    border-radius: 2px;
+    border: none;
+    border: 2px solid black;
+    color: #000;
+}
+
+.showpassbtn .fa-eye-slash {
+    position: absolute;
+    top: 2;
+    left: 0;
+}
+
+#hide1 {
+    display: none;
+}
+
+.passtexthide {
+    margin: 8px;
+    position: relative;
+    left: 8px;
+}
+
+.footerhere {
+    position: relatives;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification {
+    display: flex;
+    /* display velue should be "flex" */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    font-family: 'Noto Sans', sans-serif;
+    z-index: 111;
+}
+
+.notifyitem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 90px;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0);
+    position: relative;
+    box-sizing: border-box;
+    color: #FFF;
+    background: #000;
+    background-clip: padding-box;
+    /* !importanté */
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 5px;
+}
+
+.notifyitem:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: linear-gradient(to right, red, orange);
+    animation: notifyslide 3s ease-out forwards;
+}
+
+@keyframes notifyslide {
+    0% {
+        transform: translateX(-600px);
+    }
+}
+
+.notifycontent {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.notifycontent p {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+.notifyitem>div {
+    margin: 25px;
+}
+
+.closenotify {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.closenotify:hover .fa-times {
+    color: red;
+}
+
+
+/* audioupload */
+
+.audioupload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 80vh;
+    border: 2px solid black;
+    /* border-radius: 10px; */
+    color: rgb(255, 255, 255);
+    background: rgba(29, 29, 29, 0.534);
+    border: solid 5px rgba(19, 153, 194, 0.705);
+    /* !importanté */
+    border-radius: 1em;
+    position: relative;
+    top: 40px;
+}
+
+.audupload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.audupload>div {
+    margin: 20px;
+}
+
+.auduploaditem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.auduploaditem label {
+    text-align: center;
+}
+
+.auduploaditem input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #167bff;
+    padding: 8px;
+    border-bottom: 2px solid black;
+}
+
+.auduploaditem input[type="file"] {
+    display: none;
+}
+
+.auduploaditem input[type="text"] {
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    cursor: text;
+    color: white;
+    font-size: medium;
+    text-align: center;
+}
+
+.auduploaditem button {
+    background: #0d4792;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: 'Noto Sans', sans-serif;
+    outline: none;
+    color: white;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #0d4792;
+}
+
+#auduploadstate {
+    display: flex;
+    flex-direction: row !important;
+}

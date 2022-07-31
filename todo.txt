@@ -1,0 +1,8 @@
+1. make the playlist show and delete facility.
+2. uploading file to server facility.
+3. scan to add files facility (barcode scanner)
+4. In genie website add cbfile manager api to add links in cbdatabase..(sign in required)
+5. improve user experience
+6. make video page working
+7. make the create and read file box functional
+

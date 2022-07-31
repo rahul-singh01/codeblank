@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CB FileManager</title>
+    <link rel="stylesheet" href="http://127.0.0.1:3000/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://cdn.plyr.io/2.0.15/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/2.0.15/plyr.css">
+</head>
+
+<body>
+    <div class="bodycontainer">
+        <div class="navbox">
+            <div class="iconham" onclick="showHome()">
+                <i class="fas fa-bars"></i>
+                <!-- <i class="far fa-times-circle"></i> -->
+            </div>
+            <div class="navcont">
+                <div class="navtitle">
+                    <p class="companyCode">CodeBlank</p>
+                    <p>FileManager</p>
+                </div>
+                <div class="navlinks">
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="avlinks">
+                    <div id="timenow"></div>
+
+                    <div id="do_btn">
+                        <a id="joinbtn" href="javascript:void(0)">Join Us</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="audioopt" id="HomeLay">
+
+            <div class="homelaycode">
+                <div class="iconham" onclick="closeHome()">
+                    <i class="fas fa-bars"></i>
+                    <!-- <i class="far fa-times-circle"></i> -->
+                </div>
+                <div class="audcodetitle">
+
+                    <p class="companyCode">CodeBlank</p>
+                    <p>FileManager</p>
+                </div>
+            </div>
+            <div class="miscboxaudio">
+                <div class="miscauditem">
+                    <span class="material-icons material-icons-outlined">
+                        explore
+                        </span>
+                    <p>Explore</p>
+                </div>
+                <div class="miscauditem">
+                    <span class="material-icons material-icons-outlined">
+                        history
+                        </span>
+                    <p>History</p>
+                </div>
+                <div class="miscauditem">
+                    <span class="material-icons material-icons-outlined">
+                        playlist_play
+                        </span>
+                    <p>Playlists</p>
+                </div>
+                <div class="miscauditem" onclick="showfavourites()">
+                    <span class="material-icons material-icons-outlined">
+                        favorite
+                        </span>
+                    <p>Favourites</p>
+                </div>
+                <div class="miscauditem" onclick="logout()">
+                    <span class="material-icons material-icons-outlined">
+                        logout
+                        </span>
+                    <p>Log Out</p>
+                </div>
+            </div>
+        </div>
+        <div class="maincont" id="fill_content">
+            <style>
+                 :root {
+                    --image: url('cb500.png')
+                }
+            </style>
+            <div class="audbox" id="songplay" style="margin: 31px;">
+
+                <div class="moreoptions" style="flex-direction:column;">
+                    <h3>You are listening to
+                        <%= data.name %> favorite list</h3>
+                    <p>Be a member to enjoy this things</p>
+                    <!-- <div class="addtoplaylist" onclick="addtoWatchlist()">
+                        <p title="Add to Playlist">
+                            <span class="material-icons-outlined material-icons">playlist_add</span>
+                        </p>
+                    </div>
+                    <div class="favourites" id="like">
+                        <p title="Add to Favourites">
+                            <span class="material-icons-outlined material-icons ">favorite_border</span>
+                        </p>
+                    </div> -->
+                </div>
+
+                <div class="audboxmain">
+                    <div class="audiomain">
+                        <div class="audcdbox">
+                            <i class="fas fa-compact-disc md-240 " id="livecd"></i>
+                        </div>
+                        <div class="titleaud">
+                            <div class="title">
+                                <p style="font-size: large; ">CodeBlank Audio</p>
+                                <p style="font-family: 'Courier New', Courier, monospace; color: rgb(187, 184, 184);"><b style="font-family: monospace; font-size: large;">Artist:</b>
+                                    <span>Artist</span>
+                                </p>
+                                <div id="L_btn">
+
+                                </div>
+
+                            </div>
+                            <div id="objectdown" class="progress">
+                                <audio autoplay id="plyr-audio" class="audioplyr" onplay="audion()" onpause="audioff()" ontimeupdate='updateTrackTime(this);' controls>
+                                              <source id="audiosrc" src=" " type="audio/mpeg">
+                                          </audio>
+                                <script>
+                                    plyr.setup("#plyr-audio");
+                                </script>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="musicbox" id="dataupdate">
+
+
+            </div>
+
+            <script>
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("dataupdate").innerHTML = xhttp.responseText;
+                    }
+                };
+                xhttp.open("GET", `public/favourite/<%= data.de_userid %>`, true);
+                xhttp.send();
+                setTimeout(function() {
+                    getid()
+                }, 2000)
+            </script>
+
+            <div class="lyricsaud hidden" id="lyricsbox">
+                <div class="close" onclick="hideLyrics() ">
+                    <i class="fas fa-times md-10"></i>
+                </div>
+
+                <div class="lyrics">
+                    <h2 class="headlyrics">Lyrics</h2>
+                    <p id="lyrics_txt">
+                        searching....
+                    </p>
+                </div>
+            </div>
+
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons " rel="stylesheet ">
+            <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js "></script>
+            <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js "></script>
+            <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js "></script>
+            <link rel="stylesheet " href="https://use.fontawesome.com/releases/v5.15.4/css/all.css " integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm " crossorigin="anonymous ">
+            <script src="https://cdn.plyr.io/2.0.15/plyr.js "></script>
+            <link rel="stylesheet " href="https://cdn.plyr.io/2.0.15/plyr.css ">
+
+
+        </div>
+
+        <div class="notification" id="notfi">
+
+        </div>
+        <script>
+            function closeNotifi() {
+                document.getElementById('notfi').style.display = "none"
+            }
+
+            function webnotifi(notifi, title) {
+                document.getElementById('notfi').style.display = "flex"
+                document.getElementById('notfi').innerHTML = `
+                <div class="notifyitem">
+                <div class="notifycontent">
+                    <h3>${title}</h3>
+                    <br>
+                    <p>${notifi}</p>
+                </div>
+                <div class="closenotify" onclick="closeNotifi()">
+                    <i class="fas fa-times"></i>
+                </div>
+                
+            </div>`
+
+                setTimeout(function() {
+                    closeNotifi()
+                }, 3000)
+
+
+            }
+
+            function showHome() {
+                const homelay = document.getElementById("HomeLay")
+                homelay.style.display = "flex";
+            }
+
+            function closeHome() {
+                const homelay = document.getElementById("HomeLay")
+                homelay.style.display = "none";
+            }
+        </script>
+        <footer class="footerhere">
+            <div class="footitem">
+                © CodeBlank Websites 2021
+            </div>
+        </footer>
+    </div>
+    <div id="form_cb">
+
+    </div>
+    <%- include('../views/modal/acc_modal.ejs'); %>
+</body>
+
+<script src="http://127.0.0.1:3000/scripts/modal.js"></script>
+<script src="http://127.0.0.1:3000/scripts/sharelinkscript.js"></script>

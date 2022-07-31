@@ -1,0 +1,178 @@
+<% if(data){ %>
+    <div class="cbBox">
+        <div class="cbBoxTitle">
+            QuickAccess
+        </div>
+        <div class="cbBoxData">
+            <div class="ManBox" onclick="cbvideo(`<%= data.userid %>`)">
+                <div class="ManBoxIcon">
+                    <span class="material-icons material-icons-outlined md-48">
+                                                video_file
+                                            </span>
+                </div>
+                <div class="folderName">
+                    Videos
+                </div>
+            </div>
+            <div class="ManBox" onclick="cbaudio(`<%= data.userid %>`)">
+                <div class="ManBoxIcon">
+                    <span class="material-icons material-icons-outlined md-48">
+                                                audio_file
+                                            </span>
+                </div>
+                <div class="folderName">
+                    Audio
+                </div>
+            </div>
+            <div class="ManBox">
+                <div class="ManBoxIcon">
+                    <span class="material-icons material-icons-outlined md-48">
+                                                image
+                                            </span>
+                </div>
+                <div class="folderName">
+                    Image
+                </div>
+            </div>
+            <div class="ManBox">
+                <div class="ManBoxIcon">
+                    <span class="material-icons material-icons-outlined md-48">
+                                                description
+                                            </span>
+                </div>
+                <div class="folderName">
+                    Document
+                </div>
+            </div>
+            <div class="ManBox">
+                <div class="ManBoxIcon">
+                    <span class="material-icons material-icons-outlined md-48">
+                                                subject
+                                            </span>
+                </div>
+                <div class="folderName">
+                    Others
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="filebox">
+        <div class="filetask">
+            <div class="createnew">
+                <div class="dropdown">
+                    <button class="dropbtn">Create</button>
+                    <div class="dropdown-content">
+                        <a href="#">New File</a>
+                        <a href="#">New Folder</a>
+                        <!-- <a href="#">Link 3</a> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="editfile">
+                <button class="dropbtn">Edit File</button>
+            </div>
+            <div class="editfile">
+                <button class="dropbtn">Rename</button>
+            </div>
+            <div class="editfile">
+                <button class="dropbtn">Select</button>
+            </div>
+            <div class="editfile">
+                <button class="dropbtn">Select All</button>
+            </div>
+            <div class="editfile">
+                <button class="dropbtn">Open</button>
+            </div>
+        </div>
+        <div class="availbox">
+
+            <!-- Folder -->
+            <div class="folder">
+                <div class="filename">
+                    <div class="icon">
+                        <span class="material-icons material-icons-outlined">
+                                                    folder
+                                                </span>
+                    </div>
+                    <div class="filenamereal">
+                        New Folder
+                    </div>
+                </div>
+                <div class="filedate">
+                    07-11-2021
+                </div>
+                <div class="filesize">
+                    125265 KB
+                </div>
+            </div>
+
+
+            <div class="folder">
+                <div class="filename">
+                    <div class="icon">
+                        <span class="material-icons material-icons-outlined">
+                                                    folder
+                                                </span>
+                    </div>
+                    <div class="filenamereal">
+                        Movies
+                    </div>
+                </div>
+                <div class="filedate">
+                    07-11-2021
+                </div>
+                <div class="filesize">
+                    125265 KB
+                </div>
+            </div>
+
+
+            <div class="folder">
+                <div class="filename">
+                    <div class="icon">
+                        <span class="material-icons material-icons-outlined">
+                                                    audio_file
+                                                </span>
+                    </div>
+                    <div class="filenamereal">
+                        Music
+                    </div>
+                </div>
+                <div class="filedate">
+                    07-11-2021
+                </div>
+                <div class="filesize">
+                    125265 KB
+                </div>
+            </div>
+
+            <!-- File -->
+
+            <div class="file">
+                <div class="filename">
+                    <div class="icon">
+                        <span class="material-icons material-icons-outlined">
+                                                    article
+                                                </span>
+                    </div>
+                    <div class="filenamereal">
+                        Untitled File.html
+                    </div>
+                </div>
+                <div class="filedate">
+                    07-11-2021
+                </div>
+                <div class="filesize">
+                    125265 KB
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <% } else{ %>
+        <h1>Internal Server Error Happened</h1>
+        <% } %>

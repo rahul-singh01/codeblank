@@ -1,0 +1,46 @@
+<h2>SignUp</h2>
+
+<h4 style="color : red;">
+    <%= error %>
+</h4>
+
+<form class="signupform" action="#" method="Post">
+    <div class="username_input" onchange="checkuserstatus()" id="usernminput">
+
+        <label for="Username"><i class="far fa-user"></i> Username:</label>
+        <input id="checkuser" type="text" value="<%= uname %>" placeholder="Enter Your Username" minlength="3" required>
+    </div>
+
+    <h4>
+        <%= message %>
+    </h4>
+    <div class="fullname" id="first_name">
+        <label for="name"><i class="fas fa-file-signature"></i> Name:</label>
+        <input type="text" name="full_name" id="full_name" placeholder="Enter Your Name" required>
+    </div>
+    <div class="email" id="email">
+        <label for="email"><i class="far fa-envelope"></i> Email Address:</label>
+        <input type="email" name="email" id="emailid" placeholder="Enter Your Email" required>
+    </div>
+    <div class="password">
+        <label for="password"><i class="fas fa-key"></i> Enter Your Password:
+            <span class="showpassbtn" onclick="showPass()">
+                <i class="far fa-eye" id="hide1"></i>
+                <i class="far fa-eye-slash" id="hide2"></i>
+                <span class="passtexthide">Show Password</span>
+            </span>
+        </label>
+        <input type="password" name="password" id="passwordinput" placeholder="ENTER YOUR PASSWORD" minlength="8" required>
+
+    </div>
+    <div class="cnfpassword">
+        <label for="cnfpassword"><i class="fas fa-key"></i> Confirm Password </label>
+        <input type="password" id="passwordinput2" placeholder="Confirm Your Password" oninput="key_check()" required>
+        <div id="key_txt">
+        </div>
+    </div>
+
+    <div class="submitButton">
+        <input id="submit_btn" type="Button" value="Submit" onclick="signup()" disabled>
+    </div>
+</form>

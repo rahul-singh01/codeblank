@@ -1,0 +1,73 @@
+<%- include('../views/header_footer/head.ejs'); %>
+
+    <body>
+        <style>
+            :root {
+                --image: url('cb500.png')
+            }
+        </style>
+
+        <div class="bodycontainer">
+            <%- include('../views/header_footer/layout.ejs'); %>
+
+                <div class="maincont">
+                    <div class="audioupload">
+                        <div class="audupload">
+                            <div class="uploadtitle">
+                                <h1>Upload Audio</h1>
+                            </div>
+                            <div class="auduploaditem">
+                                <label for="image-upload">
+                                    Choose Audio Image:
+                                </label>
+                                <label for="file-upload" class="custom-file-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i> 
+                                    Choose Image
+                                </label>
+                                <input id="file-upload" type="file"/>
+
+                            </div>
+                            <div class="auduploaditem">
+                                <label for="myfile"> Upload a Audio</label>
+                                <label for="file-upload" class="custom-file-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i> 
+                                     Audio Upload
+                                </label>
+                                <input id="file-upload" type="file"/>
+
+                            </div>
+                            <div class="auduploaditem">
+                                <label for="myfile"> Enter Audio Name</label>
+                                <input type="text" placeholder="Enter Audio Name" id="audname" name="audname">
+
+                            </div>
+                            <div class="auduploaditem" id="auduploadstate">
+                                <h4>Choose File Type:</h4>
+                                <br>
+                                <div class="audstate">
+                                    <label for="myfile"> Private</label>
+                                    <input type="radio" id="audstate" name="audstate">
+                                </div>
+                                <div class="audstate">
+                                    <label for="myfile"> Public</label>
+                                    <input type="radio" id="audstate" name="audstate">
+                                </div>
+
+                            </div>
+                            <div class="auduploaditem">
+                                <button>Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <%- include('../views/header_footer/footer.ejs'); %>
+
+
+        </div>
+
+
+
+    </body>
+
+    </html>

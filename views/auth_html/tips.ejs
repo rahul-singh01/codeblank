@@ -1,0 +1,15 @@
+<form class="signupform" action="/" method="POST">
+    <input type="hidden" value="<%= token %>" name="token">
+    <h4> Tips : CB FileManager is a powerful tool to manage your data and storage</h4>
+    <div class="submitButton">
+        <input type="submit" value="Explore Now!" id="insub">
+    </div>
+    <script>
+        localStorage.setItem('token', "<%= token %>");
+        localStorage.setItem('username', '<%= username %>');
+        setTimeout(function() {
+            $("#insub").click()
+        }, 2000)
+    </script>
+
+</form>

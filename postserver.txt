@@ -1,0 +1,64 @@
+#anonfiles
+<form action="https://api.anonfiles.com/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#bayfiles
+<form action="https://api.bayfiles.com/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#indishare
+<form action="https://i6y9f.indiworlds.com/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#desifile
+<form action="https://s73.desifile.in/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#uploadever
+<form action="https://fs10.uploadever.com/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#uploadraja
+<form action="https://s9.fileupload.xyz/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#uploadbaz
+<form action="https://s36.uploadbaz.pw/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#uploadingsite
+<form action="https://fs2.fileonthego.xyz/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#pandafiles
+<form action="https://s8.pandafiles.com/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+#uploadbuzz
+<form action="https://srv2.uploadever.com/cgi-bin/upload.cgi?upload_type=file&utype=anon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+

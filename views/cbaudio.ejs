@@ -1,0 +1,107 @@
+<style>
+     :root {
+        --image: url('cb500.png')
+    }
+</style>
+<div class="localfilebtn">
+    <button><i class="fas fa-folder-open"></i> Local Files</button>
+</div>
+
+<div class="searchbox">
+
+    <input type="search" placeholder="Search For Songs/Artist" name="q" id="add_song">
+    <button onclick="search()"><i class="fas fa-search"></i></button>
+
+</div>
+<div class="audbox" id="songplay">
+    <div class="moreoptions">
+        <div class="addtoplaylist" onclick="addtoWatchlist()">
+            <p title="Add to Playlist">
+                <span class="material-icons-outlined material-icons">playlist_add</span>
+
+            </p>
+        </div>
+        <div class="favourites" id="like">
+            <p title="Add to Favourites" onclick="add_to_fav(`<%= data.userid %>`)">
+                <span class="material-icons-outlined material-icons ">favorite_border</span>
+            </p>
+        </div>
+        <div class="watchlist" id="watchList">
+            <div class="createplaylist">
+                <input type="text" name="createplaylist" id="playlist_create" placeholder="Create a Playlist">
+                <button onclick="createplaylist(`<%= data.userid %>`)"><span class="material-icons-outlined material-icons">playlist_add</span>Create Playlist</button>
+            </div>
+            <div class="playlistcheckbox">
+                <div class="playlistitem" id="insertplaylist">
+
+                </div>
+            </div>
+            <div class="saveplaylist">
+                <button onclick="closeWatchlist()">Close</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="audboxmain">
+        <div class="audiomain">
+            <div class="audcdbox">
+                <i class="fas fa-compact-disc md-240 " id="livecd"></i>
+            </div>
+            <div class="titleaud">
+                <div class="title">
+                    <p style="font-size: large; ">CodeBlank Audio</p>
+                    <p style="font-family: 'Courier New', Courier, monospace; color: rgb(187, 184, 184);"><b style="font-family: monospace; font-size: large;">Artist:</b>
+                        <span>Artist</span>
+                        <span>•</span>
+                        <span>Album Name</span>
+                        <span>•</span>
+                        <span>Song Duration</span>
+                        <span>•</span>
+                    </p>
+                    <div id="L_btn">
+
+                    </div>
+
+                </div>
+                <div id="objectdown" class="progress">
+                    <audio autoplay id="plyr-audio" class="audioplyr" onplay="audion()" onpause="audioff()" ontimeupdate='updateTrackTime(this);' controls>
+                                    <source id="audiosrc" src=" " type="audio/mpeg">
+                                </audio>
+                    <script>
+                        plyr.setup("#plyr-audio");
+                    </script>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="musicbox" id="dataupdate">
+
+
+</div>
+
+<div class="lyricsaud hidden" id="lyricsbox">
+    <div class="close" onclick="hideLyrics() ">
+        <i class="fas fa-times md-10"></i>
+    </div>
+
+    <div class="lyrics">
+        <h2 class="headlyrics">Lyrics</h2>
+        <p id="lyrics_txt">
+            searching....
+        </p>
+    </div>
+</div>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons " rel="stylesheet ">
+<script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js "></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js "></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js "></script>
+<link rel="stylesheet " href="https://use.fontawesome.com/releases/v5.15.4/css/all.css " integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm " crossorigin="anonymous ">
+<script src="https://cdn.plyr.io/2.0.15/plyr.js "></script>
+<link rel="stylesheet " href="https://cdn.plyr.io/2.0.15/plyr.css ">

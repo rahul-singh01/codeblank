@@ -1,0 +1,18 @@
+<div class="cbBox">
+    <div class="cbBoxTitle">
+        <h1>CB Welcome Page</h1>
+    </div>
+
+</div>
+<script>
+    if (token) {
+
+        document.getElementById("form_cb").innerHTML = `<form id="autoverify" action="/" method="post">
+        <input type="hidden" name="token" value="${token}">
+    </form>`
+
+        document.getElementById('autoverify').submit()
+    }
+</script>
+<!-- <%- include('../views/modal/acc_modal.ejs'); %> -->
+<!-- <script src="scripts/modal.js"></script> -->

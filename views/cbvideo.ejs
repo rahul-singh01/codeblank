@@ -1,0 +1,138 @@
+<div class="videopagecont">
+    <div class="videoPlayer">
+        <input type="text" id="getmoviename">
+        <button onclick="changeVideo()" type="button">Play</button>
+        <div id="videoplayer"></div>
+
+        <div class="videotitle">
+            <p>Big Buck Bunny | m3u8 | Multi Quality</p>
+            <br>
+            <div class="description">
+                <span style="color: rgb(161, 158, 158); font-size: small; padding: 2px;">18 Nov 2021</span>
+                <span>|</span>
+                <span style="color: rgb(161, 158, 158); font-size: small;">File Size: 168 MB</span>
+            </div>
+            <br>
+
+            <hr>
+        </div>
+    </div>
+    <div class="miscellthings">
+        <div class="mainopt">
+            <button id="myBtn"><span class="material-icons material-icons-outlined">file_upload</span>
+                            Upload</button>
+            <button><span class="material-icons material-icons-outlined">manage_search</span>Manage</button>
+        </div>
+        <br>
+        <hr>
+        <div class="suggested">
+            <p>Suggested</p>
+            <div class="somebox">
+                <img src="https://i.ytimg.com/vi/mwF20ttItL8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1XDm-UWKsZ94may5-uyRFo5nWrQ" width="180" height="100" alt="">
+                <p>
+                    MARVEL VS DC Fans | Ashish Chanchlani | Akash Dodeja, Kunal Chhabhria, Rohit Sadhwani, Paras Rupani
+                </p>
+            </div>
+            <div class="somebox">
+                <img src="https://i.ytimg.com/vi/mwF20ttItL8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1XDm-UWKsZ94may5-uyRFo5nWrQ" width="180" height="100" alt="">
+                <p>
+                    MARVEL VS DC Fans | Ashish Chanchlani | Akash Dodeja, Kunal Chhabhria, Rohit Sadhwani, Paras Rupani
+                </p>
+            </div>
+            <div class="somebox">
+                <img src="https://i.ytimg.com/vi/mwF20ttItL8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1XDm-UWKsZ94may5-uyRFo5nWrQ" width="180" height="100" alt="">
+                <p>
+                    MARVEL VS DC Fans | Ashish Chanchlani | Akash Dodeja, Kunal Chhabhria, Rohit Sadhwani, Paras Rupani
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Upload Files</p>
+        <div class="uploadBox">
+            <p>Upload Your Files Here</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="uploadBox">
+            <form action="https://api.anonfiles.com/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file_0" accept="video/webm,video/mkv,video/*" class="uploadbtn">
+                <input type="submit" value="Submit">
+            </form>
+            <span class="uploadText">Upload Files</span>
+        </div>
+    </div>
+
+</div>
+<script>
+    function changeVideo() {
+        var mv = document.getElementById('getmoviename').value
+        document.getElementById('videoplayer').innerHTML = '';
+        var player = new Clappr.Player({
+            source: `https://geniefetcher.vercel.app/reqmovname?id=${mv}`,
+            mimeType: "video/webm",
+            plugins: [DashShakaPlayback, LevelSelector],
+            width: "100%",
+            autoPlay: true,
+            shakaConfiguration: {
+                preferredAudioLanguage: 'pt-BR',
+            },
+            shakaOnBeforeLoad: function(shaka_player) {
+                // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+            },
+            parentId: '#videoplayer',
+
+        });
+
+    }
+    var player = new Clappr.Player({
+        source: "https://geniefetcher.vercel.app/reqmovname?id=transformer",
+        mimeType: "video/webm",
+        plugins: [DashShakaPlayback, LevelSelector],
+        width: "100%",
+        autoPlay: true,
+        shakaConfiguration: {
+            preferredAudioLanguage: 'pt-BR',
+        },
+        shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+        },
+        parentId: '#videoplayer',
+
+    });
+</script>
+<script>
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

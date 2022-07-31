@@ -1,0 +1,25 @@
+<h2>Login</h2>
+<h4 style="color : red;">
+    <%= error %>
+</h4>
+<form class="signupform" action="#" method="POST">
+    <div class="username_input" id="usernminput">
+        <label for="Username"><i class="far fa-user"></i> Username:</label>
+        <input type="text" placeholder="Enter Your Username" name="username" id="logged_user">
+    </div>
+    <div class="password">
+        <label for="password"><i class="fas fa-key"></i> Enter Your Password:
+            <span class="showpassbtn" onclick="showPass()">
+                <i class="far fa-eye" id="hide1" ></i>
+                <i class="far fa-eye-slash" id="hide2" ></i>
+                <span class="passtexthide">Show Password</span>
+            </span>
+        </label>
+        <input type="password" name="password" id="passwordinput" placeholder="ENTER YOUR PASSWORD">
+
+    </div>
+
+    <div class="submitButton">
+        <input type="Button" value="Submit" onclick="loggedme()">
+    </div>
+</form>
