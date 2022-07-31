@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
+var jsontokenkey = "dirty_cb_manager"
+
 function initialise_auth_controller() {
     return {
         login(req, res) {
@@ -45,7 +47,7 @@ function initialise_auth_controller() {
                                 username: result.username,
                                 user_id: result._id.toString(),
                             }
-                            var token = await jwt.sign(JSON.stringify(token_data), process.env.privateKey)
+                            var token = await jwt.sign(JSON.stringify(token_data), jsontokenkey)
                             res.render('auth_html/tips.ejs', { "token": `${token}`, "username": `${result.username}` })
                         } else {
                             res.render('auth_html/cbsignup.ejs', { "error": "Internal server error contact developer !!" })
@@ -90,7 +92,7 @@ function initialise_auth_controller() {
                             username: result.username,
                             user_id: result._id.toString(),
                         }
-                        var token = await jwt.sign(JSON.stringify(token_data), process.env.privateKey)
+                        var token = await jwt.sign(JSON.stringify(token_data), jsontokenkey)
                         res.render('auth_html/tips.ejs', { "token": `${token}`, "username": `${result.username}` })
                     } else {
                         res.render('auth_html/cblogin.ejs', { "error": "Invalid Login Credentials !" })
@@ -104,7 +106,7 @@ function initialise_auth_controller() {
         },
         async post_login_final(req, res) {
             const { token } = req.body
-            const verify = await jwt.verify(token, process.env.privatekey)
+            const verify = await jwt.verify(token, jsontokenkey)
             const data = {
                 username: verify.username,
                 userid: verify.user_id,

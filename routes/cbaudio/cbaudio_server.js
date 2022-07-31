@@ -9,6 +9,8 @@ const { base64encode, base64decode } = require('nodejs-base64');
 const { countDocuments } = require('../../config/models/User')
 const cheerio = require('cheerio')
 
+var jsontokenkey = "dirty_cb_manager"
+
 
 app.get("/lyrics", (req, res) => {
     var id = req.query.id
@@ -191,7 +193,7 @@ app.get('/cbaudio/api/fav/:userid/:do_id', (req, res) => {
 
 app.get('/token/data/:token', async(req, res) => {
     const token = req.params.token
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
 
     const data = {
         username: verify.username,
@@ -206,7 +208,7 @@ app.get('/token/data/:token', async(req, res) => {
 //requesting list fav song
 app.get('/cbaudio/api/get_fav_list/:token', async(req, res) => {
     const token = req.params.token
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
 
     const data = {
         username: verify.username,
@@ -307,7 +309,7 @@ app.post('/createplaylist/:playlistname/:userid/:token', async(req, res) => {
     const playlistname = req.params.playlistname
     const userid = req.params.userid
     const token = req.params.token
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
     if (userid == verify.user_id) {
         User.findOne({ _id: userid }, async(err, results) => {
             if (results) {
@@ -378,7 +380,7 @@ app.post('/createplaylist/:playlistname/:userid/:token', async(req, res) => {
 //refresh playlist
 app.get('/refresh/user/playlist/:token', async(req, res) => {
     const token = req.params.token
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
     User.findOne({ _id: verify.user_id }, (err, results) => {
         if (!results.set_of_conditions.playlist) {
             CBaudio_db.findOne({ userid: verify.user_id }, (err, results) => {
@@ -423,7 +425,7 @@ app.get('/createplaylist/user/data/:playname/:do_id/:token', async(req, res) => 
     const r = JSON.parse(base64decode(req.params.do_id))
     const do_id = r.id
     const token = req.params.token
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
     if (verify) {
         CBaudio_db.findOne({ userid: verify.user_id }, (err, results) => {
             if (results) {
@@ -523,7 +525,7 @@ app.get('/cbaudio/user/playlists/:userid', async(req, res) => {
 app.get('/user/playlist/delete/:token/:getvalue', async(req, res) => {
     const token = req.params.token
     const getvalue = base64decode(req.params.getvalue)
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
     CBaudio_db.findOne({ userid: verify.user_id }, (err, result) => {
         playlist_array = result.playlistname
         df = false
@@ -569,7 +571,7 @@ app.get('/user/playlist/delete/:token/:getvalue', async(req, res) => {
 app.get('/user/playlist/show/:token/:getvalue', async(req, res) => {
     const token = req.params.token
     const getvalue = base64decode(req.params.getvalue)
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, jsontokenkey)
     CBaudio_db.findOne({ userid: verify.user_id }, async(err, result) => {
         playlist_array = result.user_playlist_data
         proceed_next = false
