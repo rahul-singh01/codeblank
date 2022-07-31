@@ -191,7 +191,7 @@ app.get('/cbaudio/api/fav/:userid/:do_id', (req, res) => {
 
 app.get('/token/data/:token', async(req, res) => {
     const token = req.params.token
-    const verify = await jwt.verify(token, process.env.privatekey)
+    const verify = await jwt.verify(token, "dirty_cb_manager")
 
     const data = {
         username: verify.username,
