@@ -98,7 +98,7 @@ function avail(id) {
 
             var Json = xhttp.response;
             const json = JSON.parse(Json)
-            const results = json.results
+            const results = json.data[0]
             const download = results.downloadUrl
             const lastquality = download[download.length - 1].link
             $('#songplay > div > div > div.titleaud > div.title > p:nth-child(1)').text(results.name)
@@ -134,7 +134,8 @@ function getid() {
         var step1 = $(element).attr('onclick').replace(/avail/gi, '')
         var step2 = step1.replace("('", '')
         var step3 = step2.replace("')", '')
-        li.push(step3);
+        const data = JSON.parse(atob(step3))
+        li.push(data.id);
     })
 }
 

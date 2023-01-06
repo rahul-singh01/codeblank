@@ -89,6 +89,7 @@ app.get("/search", (req, res) => {
 app.get('/playsong', (req, res) => {
     const r = JSON.parse(base64decode(req.query.id))
     var songid = r.perma
+    console.log(`https://saavn.me/songs?link=https://www.jiosaavn.com/song/${songid}`)
         // const w = `${songid[songid.length-2]}/${songid[songid.length - 1]}`
     async function ty() {
         try {
@@ -120,7 +121,7 @@ function arrayRemove(arr, value) {
 app.get('/cbaudio/api/fav/:userid/:do_id', (req, res) => {
     const userid = req.params.userid
     r = JSON.parse(base64decode(req.params.do_id))
-    const do_id = r.id
+    const do_id = r
     User.findOne({ _id: userid }, async(err, results) => {
         if (results) {
             if (results.set_of_conditions.cbaudio) {
@@ -248,10 +249,19 @@ app.get('/:userid/show/favourite', async(req, res) => {
                 song_data = y[v][Object.keys(y[v])]
                 tu = song_data.duration
 
+                let songid = song_data.perma_url.split("/")
+                const w = `${songid[songid.length-2]}/${songid[songid.length - 1]}`
+
+                const x_data_me = {
+                    id: song_data.id,
+                    perma: w
+                }
+
                 const min_time = Math.floor(tu / 60)
                 const sec_time = (tu % 60)
                 const song_duration = (min_time + ":" + sec_time)
-                res.write(`<div class="audioitem" id="${song_data.id}" onclick="avail('${song_data.id}')">
+
+                res.write(`<div class="audioitem" id="${song_data.id}" onclick="avail('${base64encode(JSON.stringify(x_data_me))}')">
                     <div class="audiofile">
                         <div class="audioicon">
                             <img src="${song_data.image}" width="100%" height="100%" alt="">
@@ -423,7 +433,7 @@ function stringarray(parameter) {
 app.get('/createplaylist/user/data/:playname/:do_id/:token', async(req, res) => {
     const play_list_name = req.params.playname
     const r = JSON.parse(base64decode(req.params.do_id))
-    const do_id = r.id
+    const do_id = r
     const token = req.params.token
     const verify = await jwt.verify(token, jsontokenkey)
     if (verify) {
@@ -592,38 +602,53 @@ app.get('/user/playlist/show/:token/:getvalue', async(req, res) => {
                 })
                 y.push(data.data)
             }
+            
             for (v = 0; v < y.length; v++) {
-                console.log(y[v])
 
-                song_data = y[v][Object.keys(y[v])]
-                tu = song_data.duration
+                try{
+                    song_data = y[v][Object.keys(y[v])]
+                    tu = song_data.duration
 
-                const min_time = Math.floor(tu / 60)
-                const sec_time = (tu % 60)
-                const song_duration = (min_time + ":" + sec_time)
-                res.write(`<div class="audioitem" id="${song_data.id}" onclick="avail('${song_data.id}')">
-                    <div class="audiofile">
-                        <div class="audioicon">
-                            <img src="${song_data.image}" width="100%" height="100%" alt="">
+                    const min_time = Math.floor(tu / 60)
+                    const sec_time = (tu % 60)
+                    const song_duration = (min_time + ":" + sec_time)
 
-                        <span class="material-icons material-icons-outlined">
-                            play_arrow
-                        </span>
+                    let songid = song_data.perma_url.split("/")
+                    const w = `${songid[songid.length-2]}/${songid[songid.length - 1]}`
+
+                    const x_data_me = {
+                        id: song_data.id,
+                        perma: w
+                    }
+                    res.write(`<div class="audioitem" id="${song_data.id}" onclick="avail('${base64encode(JSON.stringify(x_data_me))}')">
+                        <div class="audiofile">
+                            <div class="audioicon">
+                                <img src="${song_data.image}" width="100%" height="100%" alt="">
+
+                            <span class="material-icons material-icons-outlined">
+                                play_arrow
+                            </span>
+                        </div>
+                        <div class="audname">
+                            ${song_data.song}
+                        </div>
                     </div>
-                    <div class="audname">
-                        ${song_data.song}
+                    <div class="filedate">
+                        ${song_data.singers}
                     </div>
-                </div>
-                <div class="filedate">
-                    ${song_data.singers}
-                </div>
-                <div class="filedate">
-                    ${song_data.album} | ${song_data.language}
-                </div>
-                <div class="audduration">
-                    ${song_duration} min
-                </div>
-            </div>`)
+                    <div class="filedate">
+                        ${song_data.album} | ${song_data.language}
+                    </div>
+                    <div class="audduration">
+                        ${song_duration} min
+                    </div>
+                </div>`)
+
+                }catch(err){
+                    // res.write(`<script>alert('A file can't able to read by us !!')</script>`)
+                    console.log()
+                }
+                
             }
             res.end()
         } else {
