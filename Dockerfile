@@ -1,49 +1,33 @@
-# Use multi-stage build for security and efficiency
-# Stage 1: Builder for development and dependencies
-FROM node:18-alpine AS builder
+# Stage 1: Build Stage
+FROM node:16 AS builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files first to leverage Docker cache
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies (including dev dependencies for development)
-RUN npm ci --include=dev
+# Install dependencies
+RUN npm install
 
-# Copy all source files
+# Copy the rest of the application code
 COPY . .
 
-# Stage 2: Production image
-FROM node:18-alpine AS production
+# Stage 2: Production Stage
+FROM node:16-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package.json and package-lock.json
+COPY --from=builder /app/package*.json ./
 
-# Install production dependencies only
-RUN npm ci --omit=dev
+# Install only production dependencies
+RUN npm install --production
 
-# Copy built assets from builder
+# Copy the built application code from the builder stage
 COPY --from=builder /app .
 
-# Set environment variables
-ENV NODE_ENV=production
-ENV PORT=3000
+# Expose the port the app runs on
+EXPOSE 3000
 
-# Create non-root user and set permissions
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-RUN chown -R appuser:appgroup /app
-USER appuser
-
-# Expose application port
-EXPOSE ${PORT}
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD node healthcheck.js
-
-# Start command
+# Command to run the application
 CMD ["npm", "start"]
